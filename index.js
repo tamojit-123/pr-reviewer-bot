@@ -25,7 +25,7 @@ app.post("/webhook", async (req, res) => {
     const event = req.headers["x-github-event"];
     const action = req.body.action;
 
-    if (event === 'pull_request' && (action === 'opened' || action === 'synchronize')) {
+    if (event === 'pull_request' && ['opened', 'synchronize', 'reopened'].includes(action)) {
         const pr = req.body.pull_request;
         const repo = req.body.repository;
         const owner = repo.owner.login;
