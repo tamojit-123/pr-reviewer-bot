@@ -4,7 +4,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "build": "webpack --mode=development --config webpack.config.cjs",
+    "build": "nodemon server.js",
+    "build:development": "webpack --mode=development --config webpack.config.cjs",
     "build:prod": "webpack --mode=production --config webpack.config.cjs",
     "start": "nodemon dist/server.bundle.js --watch dist",
     "dev:start": "nodemon server.js",
