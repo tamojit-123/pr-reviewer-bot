@@ -48,7 +48,8 @@ You are a senior code reviewer. Review the following GitHub Pull Request diff an
 
 1. Code refactoring suggestions
 2. Linting issues
-3. Mitigation or improvements
+3. any error or vulnerability
+4. Mitigation or improvements
 
 ${fullDiff}
 `;
