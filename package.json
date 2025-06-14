@@ -1,18 +1,39 @@
 {
   "name": "pr-reviewer-webhook",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "build": "webpack --mode=development --config webpack.config.cjs",
+    "build:prod": "webpack --mode=production --config webpack.config.cjs",
+    "start": "nodemon dist/server.bundle.js --watch dist",
+    "dev:start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "axios": "^1.6.8",
     "body-parser": "^1.20.2",
     "crypto": "^1.0.1",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2",
     "node-fetch": "^3.3.2",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "webpack-node-externals": "^3.0.0",
+    "axios": "^1.7.9",
+    "chalk": "^5.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "https": "^1.0.0",
+    "path": "^0.12.7",
+    "serverless-http": "^3.2.0",
+    "url": "^0.11.4",
+    "vercel": "^37.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
+    "babel-loader": "^9.2.1",
+    "nodemon": "^3.1.7",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
   }
 }

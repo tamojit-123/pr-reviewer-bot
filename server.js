@@ -1,15 +1,18 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { verifySignature } from "./verifySignature.js";
-import { getGeminiReview } from './gemini.js';
-import { getChangedFiles, commentOnPR } from './github.js';
+import { verifySignature } from "./src/verifySignature.js";
+import { getGeminiReview } from './src/gemini.js';
+import { getChangedFiles, commentOnPR } from './src/github.js';
 import dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 //ngrok http --url=heroic-suitably-killdeer.ngrok-free.app 3000
+app.use(cors());
+app.use(express.json());
 
 app.use(bodyParser.json({
     verify: (req, res, buf) => {
