@@ -26,32 +26,7 @@ This webhook intelligently analyzes PR changes and comments on code style, poten
 
 ---
 
-## 🚀 Getting Started
-
-### 1. **Clone the Repo**
-
-```bash
-git clone https://github.com/tamojit-123/pr-reviewer-bot.git
-cd pr-reviewer-bot
-```
-
-### 2. **Install Dependencies**
-
-```bash
-npm install
-```
-
-### 3. **Set Environment Variables**
-
-Create a `.env` file in the root:
-
-```env
-GITHUB_TOKEN=ghp_your_github_token_here
-GEMINI_API_KEY=your_google_gemini_api_key
-GITHUB_APP_SECRET=your_github_webhook_secret
-```
-
----
+# 🚀 Getting Started
 
 ## 🛠️ How It Works
 
@@ -65,16 +40,9 @@ GITHUB_APP_SECRET=your_github_webhook_secret
 
 ## 🔗 How to Integrate in Your GitHub Repo
 
-### ✅ Step 1: Deploy This Bot
-
-Deploy it using [Vercel](https://vercel.com/) or your preferred Node.js host.  
-Make sure you expose the webhook endpoint like:
-
-```
-https://your-vercel-deployment-url.vercel.app/api/webhook
-```
-
 ### ✅ Step 2: Add a Webhook to Your GitHub Repo
+
+webhook URL : [https://pr-reviewer-bot.vercel.app/webhook](https://pr-reviewer-bot.vercel.app/webhook)
 
 1. Go to your GitHub repository
 2. Navigate to **Settings → Webhooks → Add webhook**
@@ -82,10 +50,12 @@ https://your-vercel-deployment-url.vercel.app/api/webhook
 
 | Field             | Value                                       |
 |------------------|---------------------------------------------|
-| Payload URL       | `https://your-vercel-deployment-url.vercel.app/api/webhook` |
+| Payload URL       | `https://pr-reviewer-bot.vercel.app/webhook` |
 | Content type      | `application/json`                          |
 | Secret            | Your `GITHUB_APP_SECRET`                    |
 | Events to trigger | ✅ Pull requests                            |
+
+NOTE : to add GITHUB_APP_SECRET contact me on mail : [Contact](https://tamojitdas.netlify.app/#/contact)
 
 4. Click **Add Webhook**
 
@@ -101,7 +71,7 @@ Now, when a contributor opens or updates a PR, the bot will:
 ## 🧪 Example `curl` Test (For Vercel Deployed Webhook)
 
 ```bash
-curl -X POST https://your-vercel-app.vercel.app/api/webhook \
+curl -X POST [https://pr-reviewer-bot.vercel.app/webhook](https://pr-reviewer-bot.vercel.app/webhook) \
   -H "Content-Type: application/json" \
   -H "X-Hub-Signature-256: sha256=<signature>" \
   -d @mock-pr-payload.json
