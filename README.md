@@ -83,13 +83,11 @@ curl -X POST [https://pr-reviewer-bot.vercel.app/webhook](https://pr-reviewer-bo
 
 ```
 .
-├── api/
-│   └── webhook.js         # Vercel serverless handler
-├── lib/
-│   ├── index.js           # Express app
-│   ├── github.js          # GitHub API logic
-│   ├── gemini.js          # Gemini API integration
-│   └── verifySignature.js # Signature validation
+├── src/
+│   ├── github.ts          # GitHub API logic
+│   ├── gemini.ts          # Gemini API integration
+│   └── verifySignature.ts # Signature validation
+│   └── app.ts             # Main app logic
 └── .env
 ```
 
